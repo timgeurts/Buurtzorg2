@@ -1,0 +1,124 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+nav {
+  text-decoration: none;
+  width: 100%;
+  background-color: #0f59bc;
+  overflow: auto;
+  
+}
+ul {
+  text-decoration: none;
+  padding: 0px;
+  margin: 0 0 0px;
+  list-style: none;
+}
+
+nav a {
+  width: 120px;
+  display: block;
+  padding: 20px 0px;
+  text-decoration: none;
+  font-family: Arial;
+  color: white;
+  text-align: center; 
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: white;
+  background: brown;
+  transition: 0.3s;
+}
+
+
+.wijken {
+  text-decoration: none;
+  color: black;
+
+}
+.wijken:hover {
+  background-color: darkorange;
+  color: white;
+}
+
+.flex {
+  justify-content: space-around;
+  display: flex;
+}
+
+.containerIndex {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 20%;
+  position: relative;
+}
+#indexfoto {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.div1 {
+
+  margin-top: 4%;
+  height: 200px;
+  width: 500px;
+  background-color: whitesmoke ;
+  border: 2px solid black;
+  padding-left: 2%;
+  padding-right: 2%;  
+  overflow-wrap: break-word;
+  overflow: auto;
+}
+
+#div2 {
+  text-align: center;
+  font-size: 150%;
+
+}
+
+#div3 {
+  text-decoration: none;
+  color: blue;
+}
+#div3:hover {
+  text-shadow: 2px 2px 2px;
+}
+
+.div4 {
+  text-decoration: none;
+  color: red;
+  float: right;
+
+
+}
+.div4:hover {
+  text-shadow: 2px 2px 2px;
+}
+
+.div5 {
+  width: 103.7%;
+  margin-top: 2%;
+  height: 50px;
+  
+}
+
+
+.voorbeeld-mail {
+
+  width: 40%;
+  padding: 7% 0 0;
+  margin: auto;
+
+}
+.mail {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  margin: 0 auto 100px;
+  padding: 45px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
