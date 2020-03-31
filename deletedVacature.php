@@ -1,6 +1,10 @@
+
 <?php 
 session_start();
 ini_set('display_errors', 'Off');
+	if (!isset($_SESSION["loggedin"])) {
+		header("location:loginForm.php");
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,7 +14,7 @@ ini_set('display_errors', 'Off');
 	<link rel="stylesheet" type="text/css" href="css/stylelogin.css">
 	<script src="javascript/functions.js"></script>
 </head>
-<body style="overflow-y: scroll;">
+<body style="overflow-y: scroll; ">
 
 	<div id="mySidenav" class="sidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -20,7 +24,6 @@ ini_set('display_errors', 'Off');
 		<a href="vacature-gebrview.php">Vacatures - User</a>
 		<a href="deletedVacature.php">Deleted Vacature</a>
 		<a href="solicitanten.php">Solicitanten</a>
-		
 		<br>
 		<br>
 		<a href="registerForm.php">Iemand Registreren</a>
@@ -32,47 +35,36 @@ ini_set('display_errors', 'Off');
 	</div>
 
 <span id="nav" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Navigatie</span>
-	
 
 	<div class="flex">
-		<div>					
+		<div>
+			
+		
 			<div>
-				<form action="vacature-gebr.php" method="post" style="margin-top: 1.5%;">
+				<form action="vacature-admin.php" method="post" style="margin-top: 1.5%;">
 					filter op wijken:<br>
 					<input type="text" name="wijknummer" placeholder="Wijk 1 t/m 12">
 					<button type="submit" name="submit-filter">Zoek</button>
 					<input type="submit" name="clear-filter" value="Leeg filter">
 				</form>
-					
 				
 				<?php 
-				
 					$mysqli = new mysqli('localhost', 'root', '', 'buurtzorg') or die("error");
 					$wijknummer = $_POST['wijknummer'];
 					if (!isset($_POST['submit-filter'])) {
-
-						$sql = "SELECT * FROM vacature WHERE status = '0'";
+						$sql = "SELECT * FROM vacature WHERE status = '1'";
 					}
 					else {
 						if ($wijknummer < 13 && $wijknummer > 0) {
-
-							$sql = "SELECT * FROM vacature WHERE wijk = '$wijknummer' AND status = '0'";	
+							$sql = "SELECT * FROM vacature WHERE wijk = '$wijknummer' AND status = '1'";	
 						}
 						else {
-							$sql = "SELECT * FROM vacature WHERE status = '0'";
-
+							$sql = "SELECT * FROM vacature WHERE status = '1'";
 						}
-						
 					}
 					if (isset($_POST['clear-filter'])) {
-						$wijknummer = 0;
-						
+						$wijknummer = 0;	
 					}
-					
-
-
-
-					
 					$result = mysqli_query($mysqli, $sql);
 					$num_results = mysqli_num_rows($result);
 					for($i = 0; $i < $num_results; $i++) {
@@ -86,9 +78,14 @@ ini_set('display_errors', 'Off');
 					    "<b>Opleiding:</b> " . $row['opleidingsniveau'] . "<br><br>" . 
 					    
 					    $row['bericht'] . "<br>";  ?>
-					    <a href="soliciteerProces.php?wijk=<?php echo $row['wijk'];?>" id='div3'>Soliciteer hier</a>
+					    
 					     <?php echo"<br>" .
-					    "</div>";}   ?>
+					    "</div>";
+					    ?>
+				
+					    
+					    <?php
+				}   ?>
 			</div>
 		</div>
 	</div>

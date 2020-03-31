@@ -35,17 +35,17 @@ $mail 					= new PHPMailer();
 //Tell PHPMailer to use SMTP
 $mail->isSMTP();
 //Set the hostname of the mail server
-$mail->Host 			= 'mail.newapps.be';
+$mail->Host 			= 'mail.buurtzorg.work';
 //Set the SMTP port number - likely to be 25, 465 or 587
 $mail->Port 			= 587;
 //Whether to use SMTP authentication
 $mail->SMTPAuth 		= true;
 //Username to use for SMTP authentication
-$mail->Username 		= 'mailbot@newapps.be';
+$mail->Username 		= 'phpmailer@buurtzorg.work';
 //Password to use for SMTP authentication
-$mail->Password 		= 'jmy2E3?7';
+$mail->Password 		= 'IkBenEenErgSterkWachtwoord@2020';
 //Set who the message is to be sent from
-$mail->setFrom('mailbot@newapps.be', 'New Apps');
+$mail->setFrom('mailbot@buurtzorg.be', 'Buurtzorg');
 //convert HTML into a basic plain-text alternative body
 $mail->SMTPSecure 		= 'tls';
 $mail->SMTPAutoTLS 		= false;
@@ -87,7 +87,7 @@ $body = $bericht;
 * PAS AAN:
 * PAS HIER HET REPLY ADRES AAN, waarschijnlijk iets als: groep1s@newapps.be
 */
-$mail->addReplyTo('groep3s@newapps.be', 'New Apps');
+$mail->addReplyTo('phpmailer@buurtzorg.work', 'New Apps');
 
 
 /************************************************************************

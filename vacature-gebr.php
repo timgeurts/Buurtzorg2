@@ -45,15 +45,15 @@ ini_set('display_errors', 'Off');
 					$wijknummer = $_POST['wijknummer'];
 					if (!isset($_POST['submit-filter'])) {
 
-						$sql = "SELECT * FROM vacature";
+						$sql = "SELECT * FROM vacature WHERE status = '0'";
 					}
 					else {
 						if ($wijknummer < 13 && $wijknummer > 0) {
 
-							$sql = "SELECT * FROM vacature WHERE wijk = '$wijknummer'";	
+							$sql = "SELECT * FROM vacature WHERE wijk = '$wijknummer' AND status = '0'";	
 						}
 						else {
-							$sql = "SELECT * FROM vacature";
+							$sql = "SELECT * FROM vacature WHERE status = '0'";
 
 						}
 						
@@ -62,9 +62,7 @@ ini_set('display_errors', 'Off');
 						$wijknummer = 0;
 						
 					}
-					
-
-
+			
 
 					
 					$result = mysqli_query($mysqli, $sql);

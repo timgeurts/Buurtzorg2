@@ -39,4 +39,31 @@
 		header("location:solicitatieForm.php"); 
 	}
 
+	if (isset($_POST['submit-soliciteer'])) {
+		
+		$name = $_POST['name'];
+		$telnummer = $_POST['telnummer'];
+		$emailadress = $_POST['email'];
+		$leeftijd = $_POST['leeftijd'];
+		$motivatie = $_POST['motivatie'];
+		
+		
+
+		$mysqli->query("INSERT INTO solicitanten (naam, email, telnummer, leeftijd, motivatie, status) VALUES ('$name', '$emailadress', '$telnummer', '$leeftijd', '$motivatie', '0')") or die("error1");
+		header("location: vacature-gebr.php");
+		
+	}
 	
+if ($_GET['accepteren']) {
+	$id = $_GET['accepteren'];
+	$result = $mysqli->query("UPDATE solicitanten SET status = '1' WHERE id=$id") or die("error");
+	header("location: solicitanten.php");
+		
+	}
+
+if ($_GET['afwijzen']) {
+	$id = $_GET['afwijzen'];
+	$result = $mysqli->query("UPDATE solicitanten SET status = '2' WHERE id=$id") or die("error");
+	header("location: solicitanten.php");
+		
+	}

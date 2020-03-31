@@ -17,7 +17,7 @@
 		
 		
 
-		$mysqli->query("INSERT INTO vacature (titel, naam, wijk, locatie, opleidingsniveau, bericht) VALUES ('$titel', '$name', '$wijk', '$location', '$opleiding', '$message')") or die("error1");
+		$mysqli->query("INSERT INTO vacature (titel, naam, wijk, locatie, opleidingsniveau, bericht, status) VALUES ('$titel', '$name', '$wijk', '$location', '$opleiding', '$message', '0')") or die("error1");
 		header("location: vacature-admin.php");
 		
 	}
@@ -28,8 +28,8 @@
 	//post verwijderen
 	if (isset($_GET['delete'])) {
 		$id = $_GET['delete'];
-		$mysqli->query("DELETE FROM vacature WHERE id=$id") or die("error2");
 		$result = $mysqli->query("SELECT * FROM vacature WHERE id=$id") or die($mysqli->error());
+		$result = $mysqli->query("UPDATE vacature SET status = '1' WHERE id=$id") or die($mysqli->error());
 		header("location:vacature-admin.php"); 
 	}
 

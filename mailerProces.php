@@ -57,7 +57,7 @@ session_start();
 			<input type="hidden" name="name" value="<?php $name ?>">
 			<input type="hidden" name="message" value="<?php $message ?>">
 			<input type="hidden" name="onderwerp" value="<?php $subject ?>">
-			<input type="submit" name="submit-mail" value="Verstuur">
+			<input type="submit" name="submit-mail" value="Verstuur" onclick="">
 		</form>
 	</div>
 	

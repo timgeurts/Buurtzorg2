@@ -13,6 +13,8 @@
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 		<a href="index.php">Home</a>
 		<a href="vacature-gebr.php">Vacatures</a>
+		<br>
+		<a style="float: left;" href="loginForm.php">Inloggen</a>
 	</div>
 
 	<div id="bluehead">

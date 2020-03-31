@@ -17,6 +17,8 @@ session_start();
 		<a href="indexview.php">Home - User</a>
 		<a href="vacature-admin.php">Vacatures - Admin</a>
 		<a href="vacature-gebrview.php">Vacatures - User</a>
+		<a href="deletedVacature.php">Deleted Vacature</a>
+		<a href="solicitanten.php">Solicitanten</a>
 		<br>
 		<br>
 		<a href="registerForm.php">Iemand Registreren</a>

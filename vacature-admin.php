@@ -22,6 +22,7 @@ ini_set('display_errors', 'Off');
 		<a href="indexview.php">Home - User</a>
 		<a href="vacature-admin.php">Vacatures - Admin</a>
 		<a href="vacature-gebrview.php">Vacatures - User</a>
+		<a href="deletedVacature.php">Deleted Vacature</a>
 		<br>
 		<br>
 		<a href="registerForm.php">Iemand Registreren</a>
@@ -50,14 +51,14 @@ ini_set('display_errors', 'Off');
 					$mysqli = new mysqli('localhost', 'root', '', 'buurtzorg') or die("error");
 					$wijknummer = $_POST['wijknummer'];
 					if (!isset($_POST['submit-filter'])) {
-						$sql = "SELECT * FROM vacature";
+						$sql = "SELECT * FROM vacature WHERE status = '0'";
 					}
 					else {
 						if ($wijknummer < 13 && $wijknummer > 0) {
-							$sql = "SELECT * FROM vacature WHERE wijk = '$wijknummer'";	
+							$sql = "SELECT * FROM vacature WHERE wijk = '$wijknummer' AND status = '0'";	
 						}
 						else {
-							$sql = "SELECT * FROM vacature";
+							$sql = "SELECT * FROM vacature WHERE status = '0'";
 						}
 					}
 					if (isset($_POST['clear-filter'])) {

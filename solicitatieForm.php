@@ -28,14 +28,14 @@
 
 <div class="login-page">
   <div class="form">
-    <form class="login-form	.php" action="mailerProces.php" method="post">
-      <input type="text" name="volnaam" placeholder="Volledige Naam"/>
+    <form class="login-form	.php" action="soliciteerProces.php" method="post">
+      <input type="text" name="name" placeholder="Volledige Naam"/>
       <input type="email" name="email" placeholder="E-mail"/>
       <input type="int" name="leeftijd" placeholder="Leeftijd"/>
       <input type="text" name="telnummer" placeholder="Telefoonnummer"/>
-      <input name="waaromwerk" placeholder="Waarom wilt u hier werken?" />
+      <input name="motivatie" placeholder="Waarom wilt u hier werken?" />
       <input name="punten" placeholder="Wat zijn uw plus- en minpunten?" />
-      <button name="submit-login" type="submit">Verstuur</button>
+      <button name="submit-soliciteer" type="submit">Verstuur</button>
     </form>
   </div>
 </div>
