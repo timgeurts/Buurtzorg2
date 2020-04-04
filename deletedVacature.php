@@ -1,4 +1,4 @@
-
+	
 <?php 
 session_start();
 ini_set('display_errors', 'Off');
@@ -37,7 +37,7 @@ ini_set('display_errors', 'Off');
 
 <span id="nav" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Navigatie</span>
 
-	<div class="flex">
+
 		<div>
 			
 	
@@ -84,7 +84,7 @@ ini_set('display_errors', 'Off');
 					    
 					    $row['bericht'] . "<br>";
 
-					    ?> <a href="vacatureProces.php?delete=<?php echo $row['id'];?>" class='div4' id='wrap'>Verwijderen</a> <?php
+					    ?> <a href="vacatureProces.php?deletepermanent=<?php echo $row['id'];?>" class='div4'>Verwijder permanent</a> <?php
 					     
 					    echo"<br>" . 
 					    "</div>";
@@ -96,7 +96,7 @@ ini_set('display_errors', 'Off');
 				}   ?>
 			</div>
 		</div>
-	</div>
+	
 
 	
 
