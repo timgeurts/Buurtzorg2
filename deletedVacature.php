@@ -40,14 +40,17 @@ ini_set('display_errors', 'Off');
 	<div class="flex">
 		<div>
 			
-		
-			<div>
-				<form action="vacature-admin.php" method="post" style="margin-top: 1.5%;">
+	
+			
+				
+				<form action="vacature-admin.php" method="post" style="margin-top: 0.5%; text-align: center;">
+					
 					filter op wijken:<br>
 					<input type="text" name="wijknummer" placeholder="Naam wijk">
 					<button type="submit" name="submit-filter">Zoek</button>
 					<input type="submit" name="clear-filter" value="Leeg filter">
 				</form>
+				<div class="container-vacature">
 				
 				<?php 
 					$mysqli = new mysqli('localhost', 'root', '', 'buurtzorg') or die("error");
@@ -56,7 +59,7 @@ ini_set('display_errors', 'Off');
 						$sql = "SELECT * FROM vacature WHERE status = '1'";
 					}
 					else {
-						if ($wijknummer < 13 && $wijknummer > 0) {
+						if ($wijknummer == 'Scharn' || $wijknummer == 'Wijck' || $wijknummer == 'Kommelkwartier' || $wijknummer == 'Mariaberg' || $wijknummer == 'Jekerdal' || $wijknummer == 'Caberg' || $wijknummer == 'Malberg' || $wijknummer == 'Limmel' || $wijknummer == 'Amby' || $wijknummer == 'Nazareth' || $wijknummer == 'Belfort' || $wijknummer == 'Daalhof') {
 							$sql = "SELECT * FROM vacature WHERE wijk = '$wijknummer' AND status = '1'";	
 						}
 						else {
@@ -64,7 +67,8 @@ ini_set('display_errors', 'Off');
 						}
 					}
 					if (isset($_POST['clear-filter'])) {
-						$wijknummer = 0;	
+						$wijknummer = 0;
+						
 					}
 					$result = mysqli_query($mysqli, $sql);
 					$num_results = mysqli_num_rows($result);
@@ -74,16 +78,19 @@ ini_set('display_errors', 'Off');
 					    echo "<div class='div1'>" . 
 					    "<div id='div2'>" . $row['titel'] . "</div>" .  "<br>" .
 					    "<b>Auteur:</b> " . $row['naam'] . "\r" . "|" . "\r" .
-					    "<b>Locatie:</b> " . $row['locatie'] . "<br>" .
+					    "<b>Locatie:</b> " . $row['locatie'] . "\r" . "|" . "\r" .
 					    "<b>Wijk:</b> " . $row['wijk'] . "\r" . "|" . "\r" .
 					    "<b>Opleiding:</b> " . $row['opleidingsniveau'] . "<br><br>" . 
 					    
-					    $row['bericht'] . "<br>";  ?>
-					    
-					     <?php echo"<br>" .
+					    $row['bericht'] . "<br>";
+
+					    ?> <a href="vacatureProces.php?delete=<?php echo $row['id'];?>" class='div4' id='wrap'>Verwijderen</a> <?php
+					     
+					    echo"<br>" . 
 					    "</div>";
 					    ?>
-				
+					    
+					   
 					    
 					    <?php
 				}   ?>

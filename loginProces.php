@@ -17,9 +17,10 @@ if (isset($_POST['submit-login'])) {
 			header("Location: adminPage.php");
 	}
 	else {
-		$msg = "Uw naam of wachtwoord is incorrect!!!";
+		
+		header("location:loginForm.php");
 	}
 }
 else {
-	header("location:login.php");
+	header("location:loginForm.php");
 }

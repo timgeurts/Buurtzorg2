@@ -1,24 +1,21 @@
-
+	
 <?php 
 session_start();
 
-	$name = $_POST['volnaam'];
-	$email = $_POST['email'];
-	$telnummer = $_POST['telnummer'];
-	$leeftijd = $_POST['leeftijd'];
-	$waaromwerken = $_POST['waaromwerk'];
-	$punten = $_POST['punten'];
+	$name = 'Buurtzorg';
+	$email_sol = $_SESSION['email-sol'];
+	$name_sol = $_SESSION['name-sol'];
+	$bericht = $_POST['bericht'];
+	$onderwerp = $_POST['onderwerp'];
+	
+	
 
 
-	$message = "Solicitatie van: " . $email . ",<br><br>" . 
-	"Naam: " . $name . "." . "<br>" .
-	"Tel. nummer: " . $telnummer . "." . "<br>" .
-	"Leeftijd: " . $leeftijd . " jaar." . "<br>" .
-	"Waarom wil ik hier werken: " . $waaromwerken . "." . "<br>" .
-	"Wat zijn uw plus- en minpunten: " . $punten . "." . "<br>";
-
-	$subject = "Solicitatie " . $name . "<br>";
-
+	$message = "Solicitatie van: " . $name_sol . ",<br><br>" . 
+	$bericht . "<br><br>".
+	"Groetjes, " . "<br>" .
+	$name;
+	
 
 
 
@@ -46,17 +43,17 @@ session_start();
 	</div>
 
 <span id="nav" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Navigatie</span>
-
+<a href="mailForm.php"><--Terug</a>
 <div class="voorbeeld-mail">
 	<label style="font-size: 200%;">VoorbeeldMail:</label>
 	<div class="mail">
 		
-		<div><?php $mail = "Onderwerp: " . $subject . "<br><br>" . $message; echo $mail; ?></div><br>
+		<div><?php $mail = "Onderwerp: " . $onderwerp . "<br><br>" . $message; echo $mail; ?></div><br>
 		<form action="phpmailer/index.php" method="post">
-			<input type="hidden" name="email" value="<?php $email ?>">
-			<input type="hidden" name="name" value="<?php $name ?>">
+			<input type="hidden" name="email" value="<?php $email_sol ?>">
+			<input type="hidden" name="name" value="<?php $name_sol ?>">
 			<input type="hidden" name="message" value="<?php $message ?>">
-			<input type="hidden" name="onderwerp" value="<?php $subject ?>">
+			<input type="hidden" name="onderwerp" value="<?php $onderwerp ?>">
 			<input type="submit" name="submit-mail" value="Verstuur" onclick="">
 		</form>
 	</div>

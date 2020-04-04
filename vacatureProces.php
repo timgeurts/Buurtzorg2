@@ -7,7 +7,7 @@
 
 	
 	//database
-	$mysqli = new mysqli('localhost', 'g3s_gebr', '@15qzg4W', 'buurtzorg_g3s') or die("error");
+	$mysqli = new mysqli('localhost', 'root', '', 'buurtzorg') or die("error");
 	$id = 0;
 	
 	//post toevoegen

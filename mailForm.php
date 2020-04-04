@@ -8,7 +8,7 @@ session_start();
 	<title>BuurtZorg</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/stylelogin.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	
 	<script src="javascript/functions.js"></script>
 </head>
 <body>
@@ -36,7 +36,7 @@ session_start();
 
 <div class="flex">
 
-	<form method="post" action="">
+	<form method="post" action="voorbeeldmail.php">
 		<label>Verstuur naar:</label>
 		<input type="text" name="email-naar" value="<?php echo $_SESSION['email-sol']; ?>"><br> 
 		<label>Verstuurd door:</label>
@@ -44,9 +44,8 @@ session_start();
 		<label>Onderwerp:</label>
 		<input type="text" name="onderwerp" placeholder="Onderwerp" value="Solicitatie Buurtzorg"><br>
 		<label>Bericht:</label><br>
-		<textarea name="bericht" placeholder="Bericht" style="width: 30%;height: auto;"></textarea><br>
-		<input type="submit" name="submit-mail" value="Verstuur">
-
+		<textarea name="bericht" placeholder="Bericht" style="width: 30%;height: auto;"></textarea><br>	
+		<input type="submit" name="submit-preview" value="Preview">
 	</form>
 
 </div>
@@ -54,49 +53,12 @@ session_start();
 </html>
 
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
+if (isset($_POST['submit-mail'])) {
+ 	// verstuur mail
+ }
 
-// Load Composer's autoloader
-require 'vendor/autoload.php';
-
-if (isset($_POST)) {
-	$mail = new PHPMailer(true);
-
-	$emailadres_solicitant 	= $_POST['email-naar'];
-	$naam_solicitant 		= $_SESSION['name-sol'];
-	$bericht 				= $_POST['bericht'];
-	$onderwerp 				= $_POST['onderwerp'];
-
-	try {
-	    //Server settings
-	    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      
-	    $mail->isSMTP();                                           
-	    $mail->Host       = 'mail.buurtzorg.work';                    
-	    $mail->SMTPAuth   = true;                                 
-	    $mail->Username   = 'phpmailer@buurtzorg.work';                   
-	    $mail->Password   = 'IkBenEenErgSterkWachtwoord@2020';                           
-	    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         
-	    $mail->Port       = 587;                                    
-
-	    //Recipients
-	    $mail->setFrom('phpmailer@buurtzorg.work', 'Mailer');
-	    $mail->addAddress($emailadres_solicitant, $naam_solicitant);     
-	    $mail->addReplyTo('phpmailer@buurtzorg.work', 'Buurtzorg');
-
-	   
-
-	    // Content
-	    $mail->isHTML(true);                                  
-	    $mail->Subject = $onderwerp;
-	    $mail->Body    = $bericht;
-	   
-
-	    $mail->send();
-	    echo 'Message has been sent';
-	} catch (Exception $e) {
-	    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-	}
-}
+if (isset($_POST['submit-preview'])) {
+ 	header('location: voorbeeldmail.php');
+ }
 ?>
+
