@@ -36,7 +36,7 @@ ini_set('display_errors', 'Off');
 	</div>
 
 <span id="nav" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Navigatie</span>
-	<div class="flex">
+	
 		<div>
 			
 		<button onclick="window.location.href='addVacature.php'" class="div5">Vacature Toevoegen +</button><br>
@@ -94,7 +94,7 @@ ini_set('display_errors', 'Off');
 					    <?php
 				}   ?>
 			</div>
-		</div>
+		
 	</div>
 
 	

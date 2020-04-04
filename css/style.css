@@ -53,10 +53,8 @@ nav a:hover {
 
 .containerIndex {
   display: flex;
-  
-  
-
 }
+
 .imagebuurtzorg {
  display: block;
   width: 101.7%;
@@ -82,15 +80,17 @@ nav a:hover {
     justify-content: center;
     overflow-wrap: break-word;
     word-break: break-all;
+    
 
 }
 
 .div1 {
+
   max-width: 70%;
   margin-top: 1%;
   margin-bottom: 1%;
   height: 200px;
-  width: 70%;
+  width: 100%;
   background-color: whitesmoke ;
   border: 2px solid black; 
   overflow-wrap: break-word;
@@ -126,7 +126,7 @@ nav a:hover {
 }
 
 .div5 {
-  
+  min-width: 70%;
   margin-left: 15.05%;
   max-width: 70%;
   width: 70%;
@@ -185,13 +185,7 @@ td {
    margin-top: 1.5%
 }
 
-#wrap  {
-  
 
-
- 
-
-}
 
 
 

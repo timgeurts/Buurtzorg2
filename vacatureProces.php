@@ -39,6 +39,14 @@
 		header("location:vacature-admin.php"); 
 	}
 
+		//post permanent verwijderen
+	if (isset($_GET['deletepermanent'])) {
+		$id = $_GET['deletepermanent'];
+		$mysqli->query("DELETE FROM vacature WHERE id=$id") or die("error");
+		header("location:deletedVacature.php"); 
+	}
+
+
 	
 
 		
