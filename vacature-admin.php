@@ -38,10 +38,11 @@ ini_set('display_errors', 'Off');
 	<div class="flex">
 		<div>
 			
-		
-			<div>
+		<button onclick="window.location.href='addVacature.php'" class="div5">Vacature Toevoegen +</button><br>
+			
+				
 				<form action="vacature-admin.php" method="post" style="margin-top: 0.5%; text-align: center;">
-					<button onclick="window.location.href='addVacature.php'" class="div5">Vacature Toevoegen +</button><br>
+					
 					filter op wijken:<br>
 					<input type="text" name="wijknummer" placeholder="Naam wijk">
 					<button type="submit" name="submit-filter">Zoek</button>
@@ -53,19 +54,15 @@ ini_set('display_errors', 'Off');
 					$mysqli = new mysqli('localhost', 'root', '', 'buurtzorg') or die("error");
 					$wijknummer = $_POST['wijknummer'];
 					if (!isset($_POST['submit-filter'])) {
-
 						$sql = "SELECT * FROM vacature WHERE status = '0'";
 					}
 					else {
 						if ($wijknummer == 'Scharn' || $wijknummer == 'Wijck' || $wijknummer == 'Kommelkwartier' || $wijknummer == 'Mariaberg' || $wijknummer == 'Jekerdal' || $wijknummer == 'Caberg' || $wijknummer == 'Malberg' || $wijknummer == 'Limmel' || $wijknummer == 'Amby' || $wijknummer == 'Nazareth' || $wijknummer == 'Belfort' || $wijknummer == 'Daalhof') {
-
 							$sql = "SELECT * FROM vacature WHERE wijk = '$wijknummer' AND status = '0'";	
 						}
 						else {
 							$sql = "SELECT * FROM vacature WHERE status = '0'";
-
 						}
-						
 					}
 					if (isset($_POST['clear-filter'])) {
 						$wijknummer = 0;
