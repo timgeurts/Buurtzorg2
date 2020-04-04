@@ -1,7 +1,6 @@
 
 <?php 
 session_start();
-ini_set('display_errors', 'Off');
 	if (!isset($_SESSION["loggedin"])) {
 		header("location:loginForm.php");
 	}
@@ -12,10 +11,10 @@ ini_set('display_errors', 'Off');
 	<title>BuurtZorg</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/stylelogin.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	
 	<script src="javascript/functions.js"></script>
 </head>
-<body style="overflow-y: scroll; ">
+<body style="overflow-y: scroll; background-color: white; ">
 
 	<div id="mySidenav" class="sidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -66,7 +65,7 @@ ini_set('display_errors', 'Off');
 				if ($row['status'] == 1) {
 				?>
 				<tr style="background-color: lime;">
-				    <th scope="row"><?php echo $row['id']; ?></th>
+				    <td scope="row"><?php echo $row['id']; ?></td>
 				    <td><?php echo $row['naam']; ?></td>
 				    <td><?php echo $row['telnummer']; ?></td>
 				    <td><?php echo $row['email']; ?></td>
@@ -77,7 +76,7 @@ ini_set('display_errors', 'Off');
 			    if ($row['status'] == 2) {
 				?>
 				<tr style="background-color: red;">
-				    <th scope="row"><?php echo $row['id']; ?></th>
+				    <td scope="row"><?php echo $row['id']; ?></td>
 				    <td><?php echo $row['naam']; ?></td>
 				    <td><?php echo $row['telnummer']; ?></td>
 				    <td><?php echo $row['email']; ?></td>
@@ -88,7 +87,7 @@ ini_set('display_errors', 'Off');
 			    if ($row['status'] == 0) {
 				?>
 				<tr style="background-color: white;">
-				    <th scope="row"><?php echo $row['id']; ?></th>
+				    <td scope="row"><?php echo $row['id']; ?></td>
 				    <td><?php echo $row['naam']; ?></td>
 				    <td><?php echo $row['telnummer']; ?></td>
 				    <td><?php echo $row['email']; ?></td>

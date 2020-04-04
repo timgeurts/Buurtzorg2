@@ -10,30 +10,30 @@
 	if (isset($_GET['wijk'])) {
 		$wijk = $_GET['wijk'];
 
-		if ($wijk == 1) {
-			$_SESSION['email'] = 'wijk1@gmail.com';
-		} else if ($wijk == 2) {
-			$_SESSION['email'] = 'wijk2@gmail.com';
-		} else if ($wijk == 3) {
-			$_SESSION['email'] = 'wijk3@gmail.com';
-		} else if ($wijk == 4) {
-			$_SESSION['email'] = 'wijk4@gmail.com';
-		} else if ($wijk == 5) {
-			$_SESSION['email'] = 'wijk5@gmail.com';
-		} else if ($wijk == 6) {
-			$_SESSION['email'] = 'wijk6@gmail.com';
-		} else if ($wijk == 7) {	
-			$_SESSION['email'] = 'wijk7@gmail.com';
-		} else if ($wijk == 8) {	
-			$_SESSION['email'] = 'wijk8@gmail.com';
-		} else if ($wijk == 9) {		
-			$_SESSION['email'] = 'wijk9@gmail.com';
-		} else if ($wijk == 10) {	
-			$_SESSION['email'] = 'wijk10@gmail.com';
-		} else if ($wijk == 11) {		
-			$_SESSION['email'] = 'wijk11@gmail.com';
-		} else if ($wijk == 12) {
-			$_SESSION['email'] = 'wijk12@gmail.com';
+		if ($wijk == 'Scharn') {
+			$_SESSION['email'] = 'scharn@buurtzorg.work';
+		} else if ($wijk == 'Wijck') {
+			$_SESSION['email'] = 'wijck@buurtzorg.work';
+		} else if ($wijk == 'Kommelkwartier') {
+			$_SESSION['email'] = 'kommelkwartier@buurtzorg.work';
+		} else if ($wijk == 'Mariaberg') {
+			$_SESSION['email'] = 'mariaberg@buurtzorg.work';
+		} else if ($wijk == 'Jekerdal') {
+			$_SESSION['email'] = 'jekerdal@buurtzorg.work';
+		} else if ($wijk == 'Caberg') {
+			$_SESSION['email'] = 'caberg@buurtzorg.work';
+		} else if ($wijk == 'Malberg') {	
+			$_SESSION['email'] = 'malberg@buurtzorg.work';
+		} else if ($wijk == 'Limmel') {	
+			$_SESSION['email'] = 'limmel@buurtzorg.work';
+		} else if ($wijk == 'Amby') {		
+			$_SESSION['email'] = 'amby@buurtzorg.work';
+		} else if ($wijk == 'Nazareth') {	
+			$_SESSION['email'] = 'nazareth@buurtzorg.work';
+		} else if ($wijk == 'Belfort') {		
+			$_SESSION['email'] = 'belfort@buurtzorg.work';
+		} else if ($wijk == 'Daalhof') {
+			$_SESSION['email'] = 'daalhof@buurtzorg.work';
 		}
 		
 		header("location:solicitatieForm.php"); 
@@ -50,6 +50,8 @@
 		
 
 		$mysqli->query("INSERT INTO solicitanten (naam, email, telnummer, leeftijd, motivatie, status) VALUES ('$name', '$emailadress', '$telnummer', '$leeftijd', '$motivatie', '0')") or die("error1");
+
+	
 		header("location: vacature-gebr.php");
 		
 	}
@@ -57,7 +59,7 @@
 if ($_GET['accepteren']) {
 	$id = $_GET['accepteren'];
 	$result = $mysqli->query("UPDATE solicitanten SET status = '1' WHERE id=$id") or die("error");
-	header("location: solicitanten.php");
+	header("location: mailForm.php");
 		
 	}
 

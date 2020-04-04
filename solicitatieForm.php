@@ -28,7 +28,7 @@
 
 <div class="login-page">
   <div class="form">
-    <form class="login-form	.php" action="soliciteerProces.php" method="post">
+    <form class="login-form" action="soliciteerProces.php" method="post">
       <input type="text" name="name" placeholder="Volledige Naam"/>
       <input type="email" name="email" placeholder="E-mail"/>
       <input type="int" name="leeftijd" placeholder="Leeftijd"/>

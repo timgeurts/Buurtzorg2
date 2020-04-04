@@ -43,7 +43,33 @@ if (!isset($_SESSION["loggedin"])) {
 			<input type="hidden" name="id" value="<?php echo $id; ?>">
 			Titel <input required style="width: 30%; margin-bottom: 5px;" type="text" name="titel"><br>
 		    Auteur <input required style="width: 30%; margin-bottom: 5px;" type="text" name="name"><br>
-		    Wijk <input required style="width: 30%; margin-bottom: 5px;" type="text" name="wijk"><br>
+
+
+
+
+		   Wijk
+		    <select required style="width: 30%; margin-bottom: 5px;" name="wijk" id="cars">
+		    	<option value="Default">-------------</option>
+			  	<option value="Scharn">Scharn</option>
+			  	<option value="Wijck">Wijck</option>
+			  	<option value="Kommelkwartier">Kommelkwartier</option>
+			 	<option value="Mariaberg">Mariaberg</option>
+			 	<option value="Jekerdal">Jekerdal</option>
+			 	<option value="Caberg">Caberg</option>
+			 	<option value="Mariaberg">Mariaberg</option>
+			 	<option value="Malberg">Malberg</option>
+			 	<option value="Limmel">Limmel</option>
+			 	<option value="Amby">Amby</option>
+			 	<option value="Nazareth">Nazareth</option>
+			 	<option value="Belfort">Belfort</option>
+			 	<option value="Daalhof">Daalhof</option>
+			</select><br>
+
+
+
+
+
+
 		    Locatie <input required style="width: 30%; margin-bottom: 5px;" type="text" name="locatie"><br>
 		    VMBO
 		  	<input required type="radio" name="opl-niv" value="VMBO"><br>

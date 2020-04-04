@@ -1,7 +1,6 @@
 
 <?php 
 session_start();
-ini_set('display_errors', 'Off');
 	if (!isset($_SESSION["loggedin"])) {
 		header("location:loginForm.php");
 	}
@@ -62,11 +61,14 @@ ini_set('display_errors', 'Off');
 					    "<b>Leeftijd:</b> " . $row['leeftijd'] . "<br>" .
 					    "<b>Motivatie:</b> " . $row['motivatie'] . "<br>"; 		    
 					   }
+					   
 					   ?>
 
 		</div>
 		
-		<a class="btn btn-danger" href="soliciteerProces.php?afwijzen=<?php echo $row['id'];?>">Afwijzen</a>
+		<a onclick="<?php $_SESSION['email-sol'] = $row['email'];
+		$_SESSION['name-sol'] = $row['naam'];
+		 ?>"class="btn btn-danger" href="soliciteerProces.php?afwijzen=<?php echo $row['id'];?>">Afwijzen</a>
 		<a class="btn btn-success" href="soliciteerProces.php?accepteren=<?php echo $row['id'];?>">Accepteren</a>
 </div>
 </body>

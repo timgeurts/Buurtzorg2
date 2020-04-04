@@ -1,6 +1,7 @@
 body {
   margin: 0px;
   padding: 0px;
+
 }
 
 nav {
@@ -52,31 +53,53 @@ nav a:hover {
 
 .containerIndex {
   display: flex;
-  justify-content: space-around;
-  margin-left: 20%;
-  position: relative;
+  
+  
+
 }
-#indexfoto {
-  text-align: center;
-  padding-top: 50px;
+.imagebuurtzorg {
+ display: block;
+  width: 101.7%;
+  min-height: 100%
+
+}
+
+#textIndex {
+   margin-left: 4%;
+   margin-top: 4.8%;
+   background-color: white;
+   border: 2px solid black;
+   padding-left: 2%;
+   padding-right: 1.5%;
+   height: 20%;
+   padding-bottom: 13%;
+   font-family: 'Gotu', sans-serif;
+}
+
+.container-vacature {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-wrap: break-word;
+    word-break: break-all;
+
 }
 
 .div1 {
-
-  margin-top: 4%;
+  max-width: 70%;
+  margin-top: 1%;
+  margin-bottom: 1%;
   height: 200px;
-  width: 500px;
+  width: 70%;
   background-color: whitesmoke ;
-  border: 2px solid black;
-  padding-left: 2%;
-  padding-right: 2%;  
+  border: 2px solid black; 
   overflow-wrap: break-word;
   overflow: auto;
 }
 
 #div2 {
   text-align: center;
-  font-size: 150%;
+  font-size: 200%;
 
 }
 
@@ -92,17 +115,24 @@ nav a:hover {
   text-decoration: none;
   color: red;
   float: right;
+  margin-right: 1%
+ 
+  
 
 
 }
 .div4:hover {
-  text-shadow: 2px 2px 2px;
+  text-shadow: 1px 1px 1px;
 }
 
 .div5 {
-  width: 103.7%;
-  margin-top: 2%;
+
+  max-width: 70%;
+  width: 70%;
+  margin-bottom: 0.5%;
+  margin-top: 0.5%;
   height: 50px;
+
   
 }
 
@@ -122,3 +152,45 @@ nav a:hover {
   padding: 45px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
+
+.titelTop {
+
+    font-family: 'Roboto Mono', monospace;
+    margin-top: -1%;
+    font-size: 200%;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-size: 110%;
+
+}
+td {
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border-collapse: collapse;
+
+}​
+
+.form-filter {
+   
+   margin-top: 1.5%
+}
+
+#wrap  {
+  
+
+
+ 
+
+}
+
+
+

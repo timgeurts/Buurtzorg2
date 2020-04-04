@@ -4,6 +4,7 @@
 	<title>BuurtZorg</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/stylelogin.css">
+	
 	<script src="javascript/functions.js"></script>
 </head>
 <body>
