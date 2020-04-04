@@ -12,6 +12,7 @@ if (!isset($_SESSION["loggedin"])) {
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/stylelogin.css">
 	<script src="javascript/functions.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
 
@@ -19,7 +20,7 @@ if (!isset($_SESSION["loggedin"])) {
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 		<a href="adminPage.php">Home - Admin</a>
 		<a href="vacature-admin.php">Vacatures - Admin</a>
-		<a href="deletedVacature.php">Deleted Vacature</a>
+		<a href="deletedVacature.php">Deleted Vacatures</a>
 		<a href="solicitanten.php">Solicitanten</a>
 		<br>
 		<a href="indexview.php">Home - User</a>
@@ -31,7 +32,14 @@ if (!isset($_SESSION["loggedin"])) {
 	</div>
 
 	<div id="bluehead">
-		<h1 style="position: absolute;">Buurtzorg</h1><img style="width: 4%; position: fixed; right: 15px; top: 5px;" src="images/EN2.png">
+		<h1 style="position: absolute;">Buurtzorg</h1><button data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position: absolute; right: 0px; top: 60px; "><img style="width: 4%; opacity: 1; position: fixed; right: 15px; top: 5px;" src="images/EN2.png"></button>
+		<div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" style="color: red; " href="logout.php">Logout</a>
+  </div>
 	</div>
 
 <span id="nav" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Navigatie</span>
@@ -99,7 +107,9 @@ if (!isset($_SESSION["loggedin"])) {
 	</div>
 
 	
-
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 
 </html>

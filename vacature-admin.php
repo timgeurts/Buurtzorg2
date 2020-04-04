@@ -19,10 +19,12 @@ ini_set('display_errors', 'Off');
 	<div id="mySidenav" class="sidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 		<a href="adminPage.php">Home - Admin</a>
-		<a href="indexview.php">Home - User</a>
 		<a href="vacature-admin.php">Vacatures - Admin</a>
+		<a href="deletedVacature.php">Deleted Vacatures</a>
+		<a href="solicitanten.php">Solicitanten</a>
+		<br>
+		<a href="indexview.php">Home - User</a>
 		<a href="vacature-gebrview.php">Vacatures - User</a>
-		<a href="deletedVacature.php">Deleted Vacature</a>
 		<br>
 		<br>
 		<a href="registerForm.php">Iemand Registreren</a>
@@ -30,11 +32,10 @@ ini_set('display_errors', 'Off');
 	</div>
 
 	<div id="bluehead">
-		<h1 style="position: absolute;">Buurtzorg</h1>
+		<h1 style="position: absolute;">Buurtzorg</h1><img style="width: 4%; position: fixed; right: 15px; top: 5px;" src="images/EN2.png">
 	</div>
 
 <span id="nav" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Navigatie</span>
-
 	<div class="flex">
 		<div>
 			
