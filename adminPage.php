@@ -40,9 +40,6 @@ if (!isset($_SESSION["loggedin"])) {
 		
 		<div style="font-size: 1000%;">ADMIN PAGINA</div>
 	</div>
-
 	
-
 </body>
-
 </html>
