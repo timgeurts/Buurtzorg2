@@ -1,8 +1,13 @@
 <?php
+	
 	session_start();
+	if (!isset($_SESSION["loggedin"])) {
+		header("location:loginForm.php");
+	}
+
 	
 	//database
-	$mysqli = new mysqli('localhost', 'root', '', 'buurtzorg') or die("error");
+	$mysqli = new mysqli('localhost', 'g3s_gebr', '@15qzg4W', 'buurtzorg_g3s') or die("error");
 	$id = 0;
 	
 	//post toevoegen
@@ -14,6 +19,7 @@
 		$location = $_POST['locatie'];
 		$opleiding = $_POST['opl-niv'];
 		$titel = $_POST['titel'];
+
 		
 		
 

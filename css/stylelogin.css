@@ -98,13 +98,14 @@ body {
   /* Style navbar */
 
 .sidenav {
+
   height: 100%;
   width: 0;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #0f59bc;
+  background-color: #8c8c8c;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 30px;
@@ -112,6 +113,7 @@ body {
 }
 
 .sidenav a {
+  
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 26px;
@@ -152,6 +154,7 @@ body {
   margin: 0;
   padding: 0;
   z-index: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #bluehead h1{
   width: 100%;

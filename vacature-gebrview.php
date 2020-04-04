@@ -1,6 +1,9 @@
 <?php 
 session_start();
 ini_set('display_errors', 'Off');
+	if (!isset($_SESSION["loggedin"])) {
+		header("location:loginForm.php");
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,11 +42,11 @@ ini_set('display_errors', 'Off');
 			<div>
 				<form action="vacature-gebr.php" method="post" style="margin-top: 1.5%;">
 					filter op wijken:<br>
-					<input type="text" name="wijknummer" placeholder="Wijk 1 t/m 12">
+					<input type="text" name="wijknummer" placeholder="Naam wijk">
 					<button type="submit" name="submit-filter">Zoek</button>
 					<input type="submit" name="clear-filter" value="Leeg filter">
 				</form>
-					
+				<div class="container-vacature">
 				
 				<?php 
 				
@@ -54,7 +57,7 @@ ini_set('display_errors', 'Off');
 						$sql = "SELECT * FROM vacature WHERE status = '0'";
 					}
 					else {
-						if ($wijknummer < 13 && $wijknummer > 0) {
+						if ($wijknummer == 'Scharn' || $wijknummer == 'Wijck' || $wijknummer == 'Kommelkwartier' || $wijknummer == 'Mariaberg' || $wijknummer == 'Jekerdal' || $wijknummer == 'Caberg' || $wijknummer == 'Malberg' || $wijknummer == 'Limmel' || $wijknummer == 'Amby' || $wijknummer == 'Nazareth' || $wijknummer == 'Belfort' || $wijknummer == 'Daalhof') {
 
 							$sql = "SELECT * FROM vacature WHERE wijk = '$wijknummer' AND status = '0'";	
 						}

@@ -43,7 +43,7 @@ ini_set('display_errors', 'Off');
 			<div>
 				<form action="vacature-admin.php" method="post" style="margin-top: 1.5%;">
 					filter op wijken:<br>
-					<input type="text" name="wijknummer" placeholder="Wijk 1 t/m 12">
+					<input type="text" name="wijknummer" placeholder="Naam wijk">
 					<button type="submit" name="submit-filter">Zoek</button>
 					<input type="submit" name="clear-filter" value="Leeg filter">
 				</form>
