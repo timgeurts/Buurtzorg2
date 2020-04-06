@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	<title>BuurtZorg</title>
+	<title>BuurtZorg || Home</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/stylelogin.css">
 	<link href="https://fonts.googleapis.com/css2?family=Gotu&family=Roboto+Mono&display=swap" rel="stylesheet">
