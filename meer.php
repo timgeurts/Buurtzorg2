@@ -71,6 +71,7 @@ session_start();
 		$_SESSION['name-sol'] = $row['naam'];
 		 ?>"class="btn btn-danger" href="soliciteerProces.php?afwijzen=<?php echo $row['id'];?>">Afwijzen</a>
 		<a class="btn btn-success" href="soliciteerProces.php?accepteren=<?php echo $row['id'];?>">Accepteren</a>
+		<a style="float: right;" class="btn btn-primary" href="mailForm.php">Mail sturen</a>
 </div>
 </body>
 </html>
