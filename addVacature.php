@@ -8,7 +8,7 @@ if (!isset($_SESSION["loggedin"])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>BuurtZorg || Vacature || Toevoegen</title>
+	<title>BuurtZorg | Admin | Vacatures</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/stylelogin.css">
 	<script src="javascript/functions.js"></script>

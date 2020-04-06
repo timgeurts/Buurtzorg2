@@ -8,7 +8,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	<title>BuurtZorg || Solicitanten</title>
+	<title>BuurtZorg | Admin | Solicitanten</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/stylelogin.css">
 	
