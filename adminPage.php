@@ -22,7 +22,6 @@ if (!isset($_SESSION["loggedin"])) {
 		<a href="vacature-admin.php">Vacatures - Admin</a>
 		<a href="deletedVacature.php">Deleted Vacatures</a>
 		<a href="solicitanten.php">Solicitanten</a>
-		<a href="addVacature.php">XXX</a>
 		<br>
 		<a href="indexview.php">Home - User</a>
 		<a href="vacature-gebrview.php">Vacatures - User</a>
