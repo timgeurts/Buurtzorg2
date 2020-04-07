@@ -1,6 +1,6 @@
 <?php
 	
-	session_start();
+	include "langConfig.php";
 	if (!isset($_SESSION["loggedin"])) {
 		header("location:loginForm.php");
 	}

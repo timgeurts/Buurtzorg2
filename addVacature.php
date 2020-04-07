@@ -1,5 +1,5 @@
 <?php 
-session_start();
+include "langConfig.php";
 if (!isset($_SESSION["loggedin"])) {
 		header("location:loginForm.php");
 }
@@ -18,28 +18,21 @@ if (!isset($_SESSION["loggedin"])) {
 
 	<div id="mySidenav" class="sidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		<a href="adminPage.php">Home - Admin</a>
-		<a href="vacature-admin.php">Vacatures - Admin</a>
-		<a href="deletedVacature.php">Deleted Vacatures</a>
-		<a href="solicitanten.php">Solicitanten</a>
-		<br>
-		<a href="indexview.php">Home - User</a>
-		<a href="vacature-gebrview.php">Vacatures - User</a>
+		<a href="adminPage.php"><?php echo $lang["nav1"]; ?></a>
+		<a href="vacature-admin.php"><?php echo $lang["nav2"]; ?></a>
+		<a href="deletedVacature.php"><?php echo $lang["nav3"]; ?></a>
+		<a href="solicitanten.php"><?php echo $lang["nav4"]; ?></a>
 		<br>
 		<br>
-		<a href="registerForm.php">Iemand Registreren</a>
-		<a style="float: left;" href="uitloggen.php">Uitloggen</a>
+		<a href="registerForm.php"><?php echo $lang["register2"]; ?></a>
+		<a style="float: left;" href="uitloggen.php"><?php echo $lang["logout"]; ?></a>
 	</div>
 
 	<div id="bluehead">
-		<h1 style="position: absolute;">Buurtzorg</h1><button data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="right: 0px; top: 60px; "><img style="width: 4%; opacity: 1; position: absolute; right: 15px; top: 5px;" src="images/EN2.png"></button>
-		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="#NL">Nederlands</a>
-		    <a class="dropdown-item" href="#EN">Engels</a>
-		</div>
+		<h1 style="position: absolute;"><?php echo $lang["title"]; ?></h1><img style="width: 4%; position: fixed; right: 15px; top: 5px;" src="images/EN2.png">
 	</div>
 
-<span id="nav" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Navigatie</span>
+<span id="nav" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <?php echo $lang["nav"]; ?></span>
 	
 	
 

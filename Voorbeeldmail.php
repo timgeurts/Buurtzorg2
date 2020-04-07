@@ -1,6 +1,6 @@
 	
 <?php 
-session_start();
+include "langConfig.php";
 
 	$name = 'Buurtzorg';
 	$email_sol = $_SESSION['email-sol'];

@@ -1,11 +1,11 @@
 <?php 
-session_start();
+include "langconfig.php";
 ini_set('display_errors', 'Off');
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>BuurtZorg | Vacatures</title>
+	<title><?php echo $lang["title"]; ?></title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/stylelogin.css">
 	
@@ -16,27 +16,27 @@ ini_set('display_errors', 'Off');
 	<div id="mySidenav" class="sidenav">
 		<br><br>
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		<a href="index.php">Home</a>
-		<a href="vacature-gebr.php">Vacatures</a>
+		<a href="index.php"><?php echo $lang["home"]; ?></a>
+		<a href="vacature-gebr.php"><?php echo $lang["vacancies"]; ?></a>
 		<br>
-		<a style="float: left;" href="loginForm.php">Inloggen</a>
+		<a style="float: left;" href="loginForm.php"><?php echo $lang["login"]; ?></a>
 	</div>
 
 	<div id="bluehead">
-		<h1 style="position: absolute;">Buurtzorg</h1>
+		<h1 style="position: absolute;"><?php echo $lang["title"]; ?></h1>
 	</div>
 
-<span id="nav" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Navigatie</span>
+<span id="nav" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <?php echo $lang["nav"]; ?></span>
 	
 
 	<div class="flex">
 		<div>					
 			<div>
 				<form action="vacature-gebr.php" method="post" style="text-align: center; ">
-					filter op wijken:<br>
-					<input type="text" name="wijknummer" placeholder="Naam wijk">
-					<button type="submit" name="submit-filter">Zoek</button>
-					<input type="submit" name="clear-filter" value="Leeg filter">
+					<?php echo $lang["fow"]; ?>:<br>
+					<input type="text" name="wijknummer" placeholder="<?php echo $lang["namehood"]; ?>">
+					<button type="submit" name="submit-filter"><?php echo $lang["search"]; ?></button>
+					<input type="submit" name="clear-filter" value="<?php echo $lang["filter"]; ?>">
 				</form>
 					
 				<div class="container-vacature">
@@ -79,7 +79,7 @@ ini_set('display_errors', 'Off');
 					    "<b>Opleiding:</b> " . $row['opleidingsniveau'] . "<br><br>" . 
 					    
 					    $row['bericht'] . "<br>";  ?>
-					    <a href="soliciteerProces.php?wijk=<?php echo $row['wijk'];?>" id='div3'>Soliciteer hier</a>
+					    <a href="soliciteerProces.php?wijk=<?php echo $row['wijk'];?>" id='div3'><?php echo $lang["solhere"]; ?></a>
 					     <?php echo"<br>" . "</div>";}   ?>
 
 			</div>
