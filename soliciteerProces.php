@@ -1,5 +1,5 @@
 <?php
-	include "langConfig.php";
+	session_start();
 	
 	//database
 	$mysqli = new mysqli('localhost', 'root', '', 'buurtzorg') or die("error");

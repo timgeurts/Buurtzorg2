@@ -1,25 +1,33 @@
 <?php 
 session_start();
 ini_set('display_errors', 'Off');
+	if (!isset($_SESSION["loggedin"])) {
+		header("location:loginForm.php");
+	}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>BuurtZorg | Vacatures</title>
+	<title>BuurtZorg | Admin | Vacature</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/stylelogin.css">
-	
 	<script src="javascript/functions.js"></script>
 </head>
 <body style="overflow-y: scroll;">
 
 	<div id="mySidenav" class="sidenav">
-		<br><br>
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		<a href="index.php">Home</a>
-		<a href="vacature-gebr.php">Vacatures</a>
+		<a href="adminPage.php">Home - Admin</a>
+		<a href="indexview.php">Home - User</a>
+		<a href="vacature-admin.php">Vacatures - Admin</a>
+		<a href="vacature-gebrview.php">Vacatures - User</a>
+		<a href="deletedVacature.php">Deleted Vacature</a>
+		<a href="solicitanten.php">Solicitanten</a>
+		
 		<br>
-		<a style="float: left;" href="loginForm.php">Inloggen</a>
+		<br>
+		<a href="registerForm.php">Iemand Registreren</a>
+		<a style="float: left;" href="uitloggen.php">Uitloggen</a>
 	</div>
 
 	<div id="bluehead">
@@ -32,14 +40,14 @@ ini_set('display_errors', 'Off');
 	<div class="flex">
 		<div>					
 			<div>
-				<form action="vacature-gebr.php" method="post" style="text-align: center; ">
+				<form action="vacature-gebr.php" method="post" style="margin-top: 1.5%;">
 					filter op wijken:<br>
 					<input type="text" name="wijknummer" placeholder="Naam wijk">
 					<button type="submit" name="submit-filter">Zoek</button>
 					<input type="submit" name="clear-filter" value="Leeg filter">
 				</form>
-					
 				<div class="container-vacature">
+				
 				<?php 
 				
 					$mysqli = new mysqli('localhost', 'root', '', 'buurtzorg') or die("error");
@@ -63,7 +71,9 @@ ini_set('display_errors', 'Off');
 						$wijknummer = 0;
 						
 					}
-			
+					
+
+
 
 					
 					$result = mysqli_query($mysqli, $sql);
@@ -74,14 +84,14 @@ ini_set('display_errors', 'Off');
 					    echo "<div class='div1'>" . 
 					    "<div id='div2'>" . $row['titel'] . "</div>" .  "<br>" .
 					    "<b>Auteur:</b> " . $row['naam'] . "\r" . "|" . "\r" .
-					    "<b>Locatie:</b> " . $row['locatie'] . "\r" . "|" . "\r" .
+					    "<b>Locatie:</b> " . $row['locatie'] . "<br>" .
 					    "<b>Wijk:</b> " . $row['wijk'] . "\r" . "|" . "\r" .
 					    "<b>Opleiding:</b> " . $row['opleidingsniveau'] . "<br><br>" . 
 					    
 					    $row['bericht'] . "<br>";  ?>
 					    <a href="soliciteerProces.php?wijk=<?php echo $row['wijk'];?>" id='div3'>Soliciteer hier</a>
-					     <?php echo"<br>" . "</div>";}   ?>
-
+					     <?php echo"<br>" .
+					    "</div>";}   ?>
 			</div>
 		</div>
 	</div>

@@ -1,5 +1,7 @@
 <?php 
-include "langConfig.php";
+	session_start();
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,12 +16,12 @@ include "langConfig.php";
 	<div id="mySidenav" class="sidenav">
 		<br><br>
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		<a href="index.php"><?php $lang[""]  ?></a>
-		<a href="vacature-gebr.php"><?php  ?></a>
+		<a href="index.php">Home</a>
+		<a href="vacature-gebr.php">Vacatures</a>
 	</div>
 
 	<div id="bluehead">
-		<h1 style="position: absolute;"><?php $lang["title"]; ?></h1>
+		<h1 style="position: absolute;">Buurtzorg</h1>
 	</div>
 
 <span id="nav" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Navigatie</span>
